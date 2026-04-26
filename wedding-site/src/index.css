@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f5f1e9; 
+  margin: 0; padding: 0;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ✉️ INTERACTIVE ENVELOPE */
+.envelope-wrapper {
+  position: fixed; inset: 0;
+  display: flex; justify-content: center; align-items: center;
+  background-color: #fdfbf7;
+  z-index: 100;
+  transition: all 1s ease-in-out;
+}
+
+.envelope-hero {
+  position: relative;
+  width: 90%;
+  max-width: 550px;
+  cursor: pointer;
+  /* Controls the speed and feel of the "opening" transition */
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+}
+
+.main-envelope-img {
+  width: 100%;
+  height: auto;
+  /* Adds depth so it looks like it's sitting on a surface */
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.12));
+}
+
+/* The "Opening" Effect: Scale up and dissolve */
+.envelope-hero.open {
+  transform: scale(1.4);
+  opacity: 0;
+}
+
+.tap-hint-romantic {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #c4b6a6;
+  animation: pulse 2s infinite; /* Gentle pulse to guide the user */
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.envelope-wrapper.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+/* 🏛️ RESTORED STAGE STYLING */
+.canva-stage {
+  width: 100vw; height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+}
+
+.digital-invitation {
+  position: relative; width: 90%; max-width: 380px; height: 85vh;
+  background-color: #ffffff; border-radius: 4px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+}
+
+.floral-base {
+  position: relative; width: 100%; height: 100%;
+  background-image: url('/background.jpg'); background-size: cover;
+  background-position: center;
+}
+
+.floral-base::before {
+  content: ""; position: absolute; inset: 0;
+  background-color: rgba(255, 255, 255, 0.45); z-index: 0;
+}
+
+.lace-overlay {
+  position: absolute; inset: 0;
+  background-image: url('/lace-frame.png'); background-size: 100% 100%;
+  z-index: 10; pointer-events: none; opacity: 0.8;
+}
+
+.scrollable-content {
+  position: relative; z-index: 5; width: 100%; height: 100%;
+  overflow-y: auto; padding: 40px 20px; scrollbar-width: none;
+}
+
+.scrollable-content::-webkit-scrollbar { display: none; }
+
+.canva-box {
+  background-color: #f8f8f8; padding: 25px 15px;
+  border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  margin-bottom: 20px;
+}
+
+.timer-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px; border-radius: 8px; margin-bottom: 20px;
+}
+
+.canva-input {
+  width: 100%; border-bottom: 1px solid #e5e7eb;
+  padding: 10px 0; background: transparent;
+  font-size: 11px; text-align: center; outline: none;
+  text-transform: uppercase;
+}
+
+.canva-btn {
+  font-size: 9px; letter-spacing: 0.15em;
+  color: #a1a1aa; text-decoration: underline;
+}
