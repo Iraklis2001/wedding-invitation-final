@@ -1,16 +1,35 @@
-# React + Vite
+# Digital Wedding Invitation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live site: [wedding-invitation-final-plum.vercel.app](https://wedding-invitation-final-plum.vercel.app)**
 
-Currently, two official plugins are available:
+Single-page digital wedding invitation. Guests open the invitation, see a live countdown to the
+ceremony, find each location on a map, and RSVP directly from the page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Video intro that plays on the first interaction
+- Live countdown to the ceremony date and time
+- Google Maps links for the groom's house, the bride's house, the church and the reception venue
+- RSVP form capturing name, phone number and number of guests, saved to a Supabase table
+- Responsive layout styled with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+React · Vite · Tailwind CSS · Supabase · Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+The Supabase project URL and key live in `src/supabaseClient.js`; point them at your own
+Supabase project and create a table for the RSVP entries.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
